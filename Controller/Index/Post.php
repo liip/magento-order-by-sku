@@ -67,7 +67,6 @@ class Post extends Action
             $this->messageManager->addErrorMessage($exception->getMessage());
         } catch (\Exception $exception) {
             $this->messageManager->addErrorMessage(__('Error happened while processing request.'));
-            $this->messageManager->addErrorMessage($exception->getMessage());
             $this->logger->error($exception->getMessage());
         }
 
