@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="liip_order_by_sku" frontName="orderbysku">
+            <module name="Liip_OrderBySku" />
+        </route>
+    </router>
+</config>

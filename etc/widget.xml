@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="order_by_sku" class="Liip\OrderBySku\Block\Widget\OrderBySku"
+            placeholder_image="Liip_OrderBySku::images/order_by_sku.gif">
+        <label translate="true">Order By SKU</label>
+        <description translate="true">Form, which allows to add product to cart by specifying SKU</description>
+        <parameters>
+            <parameter name="show_qty" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display Quantity Control</label>
+            </parameter>
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label>Template</label>
+                <options>
+                    <option name="default" value="product/widget/order/default.phtml" selected="true">
+                        <label translate="true">Default Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

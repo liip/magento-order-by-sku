@@ -1,0 +1,39 @@
+<?php
+/**
+ * @var $block \Liip\OrderBySku\Block\Widget\OrderBySku
+ */
+
+$qtyInputAttributes = [
+    'name'        => 'qty',
+    'type'        => 'text',
+    'class'       => 'input-text',
+    'placeholder' => __('qty'),
+];
+
+if (!$block->isQtyInputVisible()) {
+    $qtyInputAttributes['type'] = 'hidden';
+    $qtyInputAttributes['value'] = '1';
+}
+
+$transformedQtyInputAttributes = [];
+foreach ($qtyInputAttributes as $attributeName => $attributeValue) {
+    $transformedQtyInputAttributes[] = $attributeName . '="' . $attributeValue . '"';
+}
+
+$transformedQtyInputAttributesString = implode(' ', $transformedQtyInputAttributes);
+
+?>
+<div class="block widget block-order-by-sku">
+    <div class="block-title">
+        <strong><?= /* @escapeNotVerified */ __('Add To Cart By SKU') ?></strong>
+    </div>
+    <div class="block-content">
+        <form method="post" action="<?= $block->getSubmitUrl(); ?>">
+            <input type="text" name="sku" placeholder="<?= /* @escapeNotVerified */ __('SKU'); ?>" class="input-text" />
+            <input <?= /* @escapeNotVerified */ $transformedQtyInputAttributesString ?> />
+            <div class="actions">
+                <button type="submit" class="button"><?= /* @escapeNotVerified */ __('Add To Cart'); ?></button>
+            </div>
+        </form>
+    </div>
+</div>
